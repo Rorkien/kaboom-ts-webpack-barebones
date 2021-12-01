@@ -4,11 +4,12 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "webpack --mode development && webpack serve --mode development",
-    "build": "webpack --mode production"
+    "start": "webpack serve --open --config webpack.development.js",
+    "build": "webpack --config webpack.config.js"
   },
   "dependencies": {
-    "kaboom": "^2000.1.6"
+    "kaboom": "^2000.1.6",
+    "webpack-merge": "^5.8.0"
   },
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.1",

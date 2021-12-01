@@ -2,8 +2,10 @@
 const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
+  mode: "production",
   entry: "./src/main.ts",
   module: {
     rules: [
@@ -36,6 +38,14 @@ module.exports = {
       </html>
       `,
     }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: "./assets/**/*",
+          to: "./",
+        },
+      ],
+    }),
   ],
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
@@ -43,9 +53,5 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
-  },
-  devtool: "eval-source-map",
-  devServer: {
-    port: 8000,
   },
 };
