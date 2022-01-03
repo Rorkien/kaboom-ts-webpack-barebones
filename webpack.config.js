@@ -25,12 +25,7 @@ module.exports = {
         <head>
           <meta charset="UTF-8" />
           <title>Game</title>
-          <style>
-            body {
-              margin: 0;
-              overflow: hidden;
-            }
-          </style>
+          <style>body {margin: 0;overflow: hidden;}</style>
         </head>
         <body>
           <div id="game"></canvas>
